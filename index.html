@@ -1,7 +1,7 @@
 <html>
 	<head>
-	<META name="Description" content="I'm too busy to make a decent website">
-	<META name="KeyWords" content="rico,rodriquez,collins,rodriguez,earthlink,yahoo,hollywood,california,queen mary,coors light twins,madonna grimes,crunch,america,next dance crew,valley beth israel,vbi,american jewish university,university of judaism">
+	<META name="Description" content="Rico Rodriquez Collins : I'm too busy to even make a decent website">
+	<META name="KeyWords" content="rico collins,earthlink,yahoo,hollywood,california,queen mary,twins,madonna grimes,crunch,dance crew,valley beth israel,american jewish university">
 
 	<style type="text/css">
 	body { 
@@ -9,7 +9,7 @@
 	} 
 	div#container { 
 	} 
-	img#random {
+	img#randomimg {
 		max-height: 100%;
 		max-width: 100%;
 		clear: both;
@@ -26,27 +26,43 @@
 	images[1]="images/ricokareem_splash_f02.jpg"; 
 	images[2]="images/ricokareem_splash_f03.jpg"; 
 	images[3]="images/ricokareem_splash_f04.jpg"; 
-	
-	function randomimage() { 
+
+	var sounds=new Array(); 
+	sounds[0]="swf/lambert.swf"; 
+	sounds[1]="swf/3.swf"; 
+	sounds[2]="swf/tiktok.swf"; 
+	sounds[3]="swf/jerk.swf"; 
+	sounds[4]="swf/supermodel.swf"; 
+
+
+	function loadrandom() { 
 	var i=Math.floor(Math.random()*images.length); 
-	document.getElementById("random").src=images[i]; 
+	document.getElementById("randomimg").src=images[i]; 
+
+	var j=Math.floor(Math.random()*sounds.length); 
+	document.getElementById("randommoviep").value=sounds[j]; 
+	document.getElementById("randommoviee").src=sounds[j]; 
 	} 
-	onload=randomimage;
+	
+	
+	onload=loadrandom;
+
 	</script>
 	
 	<title>rico kareem :: net</title>
 	</head>
 
 	<body>
+		
+		<div id="container"> 
 	 
 		<object width="0" height="0">
-		<param name="movie" value="lambert.swf">
-		<embed src="lambert.swf" width="0" height="0">
+		<param id="randommoviep" name="movie" value="">
+		<embed id="randommoviee" src="" width="0" height="0">
 		</embed>
 		</object>
 
-		<div id="container"> 
-		<img id="random" src="" alt=""/> 
+		<img id="randomimg" src="" alt="" align="right" /> 
 		</div>
 
 	</body>
