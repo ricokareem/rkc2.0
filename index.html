@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 
 <html>
@@ -7,67 +7,62 @@
 	<META name="KeyWords" content="rico collins,earthlink,yahoo,hollywood,california,queen mary,twins,madonna grimes,crunch,dance crew,valley beth israel,american jewish university">
 
 	<style type="text/css">
-	body { 
-		background:#ffffff; 
-	} 
-	div#container { 
-	} 
-	img#randomimg {
-		max-height: 100%;
-		max-width: 100%;
-		clear: both;
-		margin-left: 0%;
-		margin-bottom: 0px;
-		margin-right: 0%;
-		margin-top: 0px;
-	}
+		body {
+			background:#ffffff;
+		}
+		img#randomimg {
+			max-height: 100%;
+			max-width: 100%;
+			clear: both;
+			margin-left: 0%;
+			margin-bottom: 0px;
+			margin-right: 0%;
+			margin-top: 0px;
+		}
 	</style>
-	
-	<script type="text/javascript"> 
-	var images=new Array(); 
-	images[0]="images/ricokareem_splash_f01.jpg"; 
-	images[1]="images/ricokareem_splash_f02.jpg"; 
-	images[2]="images/ricokareem_splash_f03.jpg"; 
-	images[3]="images/ricokareem_splash_f04.jpg"; 
 
-	var sounds=new Array(); 
-	sounds[0]="swf/lambert.swf"; 
-	sounds[1]="swf/3.swf"; 
-	sounds[2]="swf/tiktok.swf"; 
-	sounds[3]="swf/jerk.swf"; 
-	sounds[4]="swf/supermodel.swf"; 
+	<script type="text/javascript">
+		var images = [
+			"images/ricokareem_splash_f01.jpg",
+			"images/ricokareem_splash_f02.jpg",
+			"images/ricokareem_splash_f03.jpg",
+			"images/ricokareem_splash_f04.jpg"
+		];
 
+		var sounds = [
+			"mp3/lambert.mp3",
+			"mp3/3.mp3",
+			"mp3/tiktok.mp3",
+			"mp3/jerk.mp3",
+			"mp3/supermodel.mp3"
+		];
 
-	function loadrandom() { 
-	var i=Math.floor(Math.random()*images.length); 
-	document.getElementById("randomimg").src=images[i]; 
+		function loadrandom() {
+			var i=Math.floor(Math.random()*images.length);
+			document.getElementById("randomimg").src = images[i];
 
-	var j=Math.floor(Math.random()*sounds.length); 
-	document.getElementById("randommoviep").value=sounds[j]; 
-	document.getElementById("randommoviee").src=sounds[j]; 
-	} 
-	
-	
-	onload=loadrandom;
-
+			var j=Math.floor(Math.random()*sounds.length);
+			document.getElementById("randomaudio").src = sounds[j];
+		}
 	</script>
-	
+
 	<title>rico kareem :: net</title>
 	</head>
 
 	<body>
-		
-		<div id="container"> 
-	 
-		<object width="0" height="0">
-		<param id="randommoviep" name="flash-music" value="">
-		<embed id="randommoviee" src="" width="0" height="0" name="flash-music" >
-		</embed>
-		</object>
-
-		<img id="randomimg" src="" alt="a picture of a mercedes benz amg chosen at random" align="right" /> 
+		<div id="container">
+			<audio id="randomaudio" type="audio/mpeg" src="" preload="auto"></audio>
+			<img id="randomimg" src="" alt="a picture of a mercedes benz amg chosen at random" align="right" />
+			<script>
+				loadrandom();
+				var media = document.getElementById("randomaudio");
+				var audioPromise = media.play();
+				if (audioPromise !== undefined){
+					audioPromise.then(_ => {
+					}).catch(error => {console.log(error.message);});
+				}
+			</script>
 		</div>
-
 	</body>
 
 </html>
